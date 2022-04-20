@@ -1,0 +1,35 @@
+package com.bridgelabz.Regextest;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class ValidationOfRegexTest {
+	final static String CAP_LATTER ="^[A-Z].*";
+	public static boolean  CheckStartWithCap(String input) {
+		
+		Pattern pattern = Pattern.compile(CAP_LATTER);
+		Matcher matcher = pattern.matcher(input);
+		
+		if(!matcher.find()) {
+			System.out.println("Please Enter First CAP..");
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+
+	final static String DIGIT_ONLY = "(91)?[7-9][0-9]{9}";
+	public static boolean CheckAllDigit(String input) {
+		
+		Pattern pattern = Pattern.compile(DIGIT_ONLY);
+		Matcher matcher = pattern.matcher(input);
+		
+		if(!matcher.find()) {
+			System.out.println("Please Enter Valid Digit Mobile Number:");
+			return false;
+		}
+		else {
+			return true;
+		}
+
+}
+}
